@@ -17,14 +17,113 @@ if(NOT hasParent)
 endif ()
 
 SET_MIN_VERSIONS()
-set(LibName 
+set(LibName base_pxfoundations)
 project(${LibName})
 
 set(Interface
+		foundation/Ps.hpp
+		foundation/PsAlignedMalloc.hpp
+		foundation/PsAlloca.hpp
+		foundation/PsAllocator.hpp
+		foundation/PsAoS.hpp
+		foundation/PsArray.hpp
+		foundation/PsAtomic.hpp
+		foundation/PsBasicTemplates.hpp
+		foundation/PsBitUtils.hpp
+		foundation/PsBroadcast.hpp
+		foundation/PsCpu.hpp
+		foundation/PsFoundation.hpp
+		foundation/PsFPU.hpp
+		foundation/PsHash.hpp
+		foundation/PsHashInternals.hpp
+		foundation/PsHashMap.hpp
+		foundation/PsHashSet.hpp
+		foundation/PsInlineAllocator.hpp
+		foundation/PsInlineAoS.hpp
+		foundation/PsInlineArray.hpp
+		foundation/PsIntrinsics.hpp
+		foundation/PsMathUtils.hpp
+		foundation/PsMutex.hpp
+		foundation/PsPool.hpp
+		foundation/PsSList.hpp
+		foundation/PsSocket.hpp
+		foundation/PsSort.hpp
+		foundation/PsSortInternals.hpp
+		foundation/PsString.hpp
+		foundation/PsSync.hpp
+		foundation/PsTempAllocator.hpp
+		foundation/PsThread.hpp
+		foundation/PsTime.hpp
+		foundation/PsUserAllocated.hpp
+		foundation/PsUtilities.hpp
+		foundation/PsVecMath.hpp
+		foundation/PsVecMathAoSScalar.hpp
+		foundation/PsVecMathAoSScalarInline.hpp
+		foundation/PsVecMathSSE.hpp
+		foundation/PsVecMathUtilities.hpp
+		foundation/PsVecQuat.hpp
+		foundation/PsVecTransform.hpp
+		foundation/Px.hpp
+		foundation/PxAllocatorCallback.hpp
+		foundation/PxBitAndData.hpp
+		foundation/PxBounds3.hpp
+		foundation/PxErrorCallback.hpp
+		foundation/PxErrors.hpp
+		foundation/PxFlags.hpp
+		foundation/PxIntrinsics.hpp
+		foundation/PxIO.hpp
+		foundation/PxMat33.hpp
+		foundation/PxMat44.hpp
+		foundation/PxMath.hpp
+		foundation/PxMemory.hpp
+		foundation/PxPlane.hpp
+		foundation/PxPreprocessor.hpp
+		foundation/PxProfiler.hpp
+		foundation/PxQuat.hpp
+		foundation/PxSharedAssert.hpp
+		foundation/PxSimpleTypes.hpp
+		foundation/PxStrideIterator.hpp
+		foundation/PxTransform.hpp
+		foundation/PxUnionCast.hpp
+		foundation/PxVec2.hpp
+		foundation/PxVec3.hpp
+		foundation/PxVec4.hpp
 		)
 
 set(Src
+		PsUtilities.cpp
+		PsTempAllocator.cpp
+		PsString.cpp
+		PsMathUtils.cpp
+		PsFoundation.cpp
+		PsAssert.cpp
+		PsAllocator.cpp
 		)
+
+if (WIN32)
+	list(APPEND Src windows/PsUWPThread.cpp)
+	list(APPEND Src windows/PsWindowsAtomic.cpp)
+	list(APPEND Src windows/PsWindowsCpu.cpp)
+	list(APPEND Src windows/PsWindowsFPU.cpp)
+	list(APPEND Src windows/PsWindowsMutex.cpp)
+	list(APPEND Src windows/PsWindowsPrintString.cpp)
+	list(APPEND Src windows/PsWindowsSList.cpp)
+	list(APPEND Src windows/PsWindowsSocket.cpp)
+	list(APPEND Src windows/PsWindowsSync.cpp)
+	list(APPEND Src windows/PsWindowsThread.cpp)
+endif ()
+
+if (APPLE OR UNIX)
+	list(APPEND Src unix/PsUnixAtomic.cpp)
+	list(APPEND Src unix/PsUnixCpu.cpp)
+	list(APPEND Src unix/PsUnixFPU.cpp)
+	list(APPEND Src unix/PsUnixMutex.cpp)
+	list(APPEND Src unix/PsUnixPrintString.cpp)
+	list(APPEND Src unix/PsUnixSList.cpp)
+	list(APPEND Src unix/PsUnixSocket.cpp)
+	list(APPEND Src unix/PsUnixSync.cpp)
+	list(APPEND Src unix/PsUnixThread.cpp)
+endif ()
 
 set(Deps
     al2o3_platform
@@ -39,4 +138,11 @@ set( TestDeps
 
 		utils_simple_logmanager)
 ADD_LIB_TESTS(${LibName} "${Interface}" "${Tests}" "${TestDeps}")
+target_include_directories(${LibName} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/base_pxfoundations)
+target_include_directories(${LibName} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/base_pxfoundations/foundation)
 
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
+	target_compile_definitions(${LibName} PUBLIC _DEBUG)
+elseif ()
+	target_compile_definitions(${LibName} PUBLIC NDEBUG)
+endif ()
