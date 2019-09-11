@@ -55,6 +55,8 @@
 #include <sys/sysctl.h>
 #include <TargetConditionals.h>
 #include <pthread.h>
+#include <mach/mach_init.h>
+#include <mach/mach_port.h>
 #endif
 
 // fwd
@@ -107,7 +109,8 @@ static void setTid(_ThreadImpl &threadImpl) {
 #if PX_PS4 || (defined (TARGET_OS_TV) && TARGET_OS_TV)
 	// AM: TODO: neither of the below are implemented
 #elif PX_APPLE_FAMILY
-	threadImpl.tid = syscall(SYS_gettid);
+	threadImpl.tid = mach_thread_self();
+	mach_port_deallocate(mach_task_self(), threadImpl.tid);
 #elif PX_EMSCRIPTEN
 	threadImpl.tid = pthread_self();
 #else
