@@ -27,8 +27,8 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "PsTime.h"
-#include "windows/PsWindowsInclude.h"
+#include "PsTime.hpp"
+#include "windows/PsWindowsInclude.hpp"
 
 namespace {
 int64_t getTimeTicks() {

@@ -30,8 +30,8 @@
 #ifndef PSFOUNDATION_PSWINDOWSINTRINSICS_H
 #define PSFOUNDATION_PSWINDOWSINTRINSICS_H
 
-#include "Ps.h"
-#include "foundation/PxAssert.h"
+#include "Ps.hpp"
+#include "foundation/PxAssert.hpp"
 
 // this file is for internal intrinsics - that is, intrinsics that are used in
 // cross platform code but do not appear in the API

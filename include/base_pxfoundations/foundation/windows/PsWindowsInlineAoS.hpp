@@ -34,7 +34,7 @@
 #error Vector intrinsics should not be included when using scalar implementation.
 #endif
 
-#include "../PsVecMathSSE.h"
+#include "../PsVecMathSSE.hpp"
 
 namespace physx {
 namespace shdfnd {

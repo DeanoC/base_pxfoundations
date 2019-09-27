@@ -27,12 +27,12 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "windows/PsWindowsInclude.h"
-#include "PsFoundation.h"
-#include "PsUserAllocated.h"
-#include "PsMutex.h"
-#include "PsThread.h"
-#include "foundation/PxErrorCallback.h"
+#include "windows/PsWindowsInclude.hpp"
+#include "PsFoundation.hpp"
+#include "PsUserAllocated.hpp"
+#include "PsMutex.hpp"
+#include "PsThread.hpp"
+#include "foundation/PxErrorCallback.hpp"
 
 namespace physx {
 namespace shdfnd {

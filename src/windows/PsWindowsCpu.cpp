@@ -27,7 +27,7 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "PsCpu.h"
+#include "PsCpu.hpp"
 #pragma warning(push)
 //'symbol' is not defined as a preprocessor macro, replacing with '0' for 'directives'
 #pragma warning(disable : 4668)

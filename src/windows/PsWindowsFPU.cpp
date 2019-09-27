@@ -26,9 +26,9 @@
 // Copyright (c) 2008-2019 NVIDIA Corporation. All rights reserved.
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
-#include "PsFPU.h"
-#include "float.h"
-#include "PsIntrinsics.h"
+#include "PsFPU.hpp"
+#include <float.h>
+#include "PsIntrinsics.hpp"
 
 #if PX_X64 || PX_ARM || PX_A64
 #define _MCW_ALL _MCW_DN | _MCW_EM | _MCW_RC

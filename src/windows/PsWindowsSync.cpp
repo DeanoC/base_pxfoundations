@@ -27,9 +27,9 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "windows/PsWindowsInclude.h"
-#include "PsUserAllocated.h"
-#include "PsSync.h"
+#include "windows/PsWindowsInclude.hpp"
+#include "PsUserAllocated.hpp"
+#include "PsSync.hpp"
 
 namespace physx {
 namespace shdfnd {

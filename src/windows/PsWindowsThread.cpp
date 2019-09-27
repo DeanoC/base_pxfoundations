@@ -27,11 +27,11 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "windows/PsWindowsInclude.h"
-#include "PsFoundation.h"
-#include "PsThread.h"
-#include "foundation/PxErrorCallback.h"
-#include "foundation/PxAssert.h"
+#include "windows/PsWindowsInclude.hpp"
+#include "PsFoundation.hpp"
+#include "PsThread.hpp"
+#include "foundation/PxErrorCallback.hpp"
+#include "foundation/PxAssert.hpp"
 
 // an exception for setting the thread name in Microsoft debuggers
 #define NS_MS_VC_EXCEPTION 0x406D1388

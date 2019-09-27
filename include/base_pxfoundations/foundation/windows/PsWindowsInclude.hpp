@@ -30,7 +30,7 @@
 #ifndef PSFOUNDATION_PSWINDOWSINCLUDE_H
 #define PSFOUNDATION_PSWINDOWSINCLUDE_H
 
-#include "Ps.h"
+#include "Ps.hpp"
 
 #ifndef _WIN32
 #error "This file should only be included by Windows builds!!"

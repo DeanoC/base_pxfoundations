@@ -27,9 +27,9 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "windows/PsWindowsInclude.h"
-#include "PsAllocator.h"
-#include "PsSList.h"
+#include "windows/PsWindowsInclude.hpp"
+#include "PsAllocator.hpp"
+#include "PsSList.hpp"
 
 namespace physx {
 namespace shdfnd {

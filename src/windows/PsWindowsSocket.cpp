@@ -27,12 +27,12 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "foundation/PxIntrinsics.h"
+#include "foundation/PxIntrinsics.hpp"
 
-#include "windows/PsWindowsInclude.h"
-#include "PsSocket.h"
-#include "PsThread.h"
-#include "PsArray.h"
+#include "windows/PsWindowsInclude.hpp"
+#include "PsSocket.hpp"
+#include "PsThread.hpp"
+#include "PsArray.hpp"
 
 #include <Winsock2.h>
 #pragma comment(lib, "Ws2_32")

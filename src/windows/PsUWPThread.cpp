@@ -27,14 +27,14 @@
 // Copyright (c) 2004-2008 AGEIA Technologies, Inc. All rights reserved.
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.
 
-#include "foundation/PxPreprocessor.h"
+#include "foundation/PxPreprocessor.hpp"
 
 #if PX_UWP
 
-#include "foundation/PxAssert.h"
+#include "foundation/PxAssert.hpp"
 
-#include "windows/PsWindowsInclude.h"
-#include "PsThread.h"
+#include "windows/PsWindowsInclude.hpp"
+#include "PsThread.hpp"
 
 using namespace Platform;
 using namespace Windows::Foundation;
