@@ -37,7 +37,7 @@
 #include "PxFoundation.hpp"
 #if(PX_WINDOWS_FAMILY || PX_XBOXONE)
 #include <exception>
-#include <typeinfo.h>
+#include <typeinfo>
 #endif
 #if(PX_APPLE_FAMILY)
 #include <typeinfo>
