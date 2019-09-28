@@ -39,7 +39,7 @@
 #endif
 
 #if PX_LINUX
-#include "foundation/PxSimpleTypes.h"
+#include "foundation/PxSimpleTypes.hpp"
 #endif
 
 /*!
